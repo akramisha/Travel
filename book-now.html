@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Trip - Wanderlust</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="booking-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header scrolled">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1>Wander<span>lust</span></h1>
+                    </a>
+                </div>
+                <nav class="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="index.html#destinations" class="nav-link">Destinations</a></li>
+                        <li class="nav-item"><a href="index.html#packages" class="nav-link">Packages</a></li>
+                        <li class="nav-item"><a href="index.html#about" class="nav-link">About Us</a></li>
+                        <li class="nav-item"><a href="index.html#gallery" class="nav-link">Gallery</a></li>
+                        <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-right">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                    <button class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <button class="btn btn-primary">Book Now</button>
+                    <div class="mobile-menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
+            <li class="mobile-nav-item"><a href="index.html#destinations" class="mobile-nav-link">Destinations</a></li>
+            <li class="mobile-nav-item"><a href="index.html#packages" class="mobile-nav-link">Packages</a></li>
+            <li class="mobile-nav-item"><a href="index.html#about" class="mobile-nav-link">About Us</a></li>
+            <li class="mobile-nav-item"><a href="index.html#gallery" class="mobile-nav-link">Gallery</a></li>
+            <li class="mobile-nav-item"><a href="index.html#contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+        <button class="btn btn-primary mobile-book">Book Now</button>
+    </div>
+
+    <!-- Page Title -->
+    <section class="page-title">
+        <div class="container">
+            <h1>Book Your Dream Vacation</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Book Now</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-container">
+                <!-- Booking Steps -->
+                <div class="booking-steps">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-text">Trip Details</div>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-text">Personal Info</div>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-text">Payment</div>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step" data-step="4">
+                        <div class="step-number">4</div>
+                        <div class="step-text">Confirmation</div>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <div class="booking-form-container">
+                    <form id="booking-form" class="booking-form">
+                        <!-- Step 1: Trip Details -->
+                        <div class="form-step active" data-step="1">
+                            <h2>Trip Details</h2>
+                            <p class="form-subtitle">Select your destination and travel preferences</p>
+                            
+                            <div class="form-group">
+                                <label for="destination">Destination</label>
+                                <select id="destination" name="destination" required>
+                                    <option value="">Select your destination</option>
+                                    <option value="bali">Bali, Indonesia</option>
+                                    <option value="swiss-alps">Swiss Alps</option>
+                                    <option value="tokyo">Tokyo, Japan</option>
+                                    <option value="rome">Rome, Italy</option>
+                                    <option value="santorini">Santorini, Greece</option>
+                                    <option value="new-york">New York City, USA</option>
+                                    <option value="paris">Paris, France</option>
+                                    <option value="cairo">Cairo, Egypt</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="check-in">Check-in Date</label>
+                                    <input type="date" id="check-in" name="check-in" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="check-out">Check-out Date</label>
+                                    <input type="date" id="check-out" name="check-out" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="adults">Adults</label>
+                                    <select id="adults" name="adults" required>
+                                        <option value="1">1</option>
+                                        <option value="2" selected>2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="children">Children</label>
+                                    <select id="children" name="children">
+                                        <option value="0" selected>0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="package-type">Package Type</label>
+                                <select id="package-type" name="package-type" required>
+                                    <option value="">Select package type</option>
+                                    <option value="standard">Standard Package</option>
+                                    <option value="premium">Premium Package</option>
+                                    <option value="luxury">Luxury Package</option>
+                                    <option value="custom">Custom Package</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="accommodation">Accommodation</label>
+                                <select id="accommodation" name="accommodation" required>
+                                    <option value="">Select accommodation type</option>
+                                    <option value="hotel">Hotel</option>
+                                    <option value="resort">Resort</option>
+                                    <option value="villa">Villa</option>
+                                    <option value="apartment">Apartment</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Additional Services</label>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="airport-transfer" name="services[]" value="airport-transfer">
+                                        <label for="airport-transfer">Airport Transfer</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="guided-tours" name="services[]" value="guided-tours">
+                                        <label for="guided-tours">Guided Tours</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="travel-insurance" name="services[]" value="travel-insurance">
+                                        <label for="travel-insurance">Travel Insurance</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="car-rental" name="services[]" value="car-rental">
+                                        <label for="car-rental">Car Rental</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="special-requests">Special Requests</label>
+                                <textarea id="special-requests" name="special-requests" rows="3" placeholder="Any special requests or requirements?"></textarea>
+                            </div>
+                            
+                            <div class="form-buttons">
+                                <button type="button" class="btn btn-primary next-step">Continue to Personal Info</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2: Personal Information -->
+                        <div class="form-step" data-step="2">
+                            <h2>Personal Information</h2>
+                            <p class="form-subtitle">Please provide your contact and personal details</p>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">First Name</label>
+                                    <input type="text" id="first-name" name="first-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name</label>
+                                    <input type="text" id="last-name" name="last-name" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input type="text" id="address" name="address" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <input type="text" id="city" name="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="zip">Postal/Zip Code</label>
+                                    <input type="text" id="zip" name="zip" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="country">Country</label>
+                                <select id="country" name="country" required>
+                                    <option value="">Select your country</option>
+                                    <option value="us">United States</option>
+                                    <option value="ca">Canada</option>
+                                    <option value="uk">United Kingdom</option>
+                                    <option value="au">Australia</option>
+                                    <option value="fr">France</option>
+                                    <option value="de">Germany</option>
+                                    <option value="jp">Japan</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Passport Information</label>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="passport-number">Passport Number</label>
+                                        <input type="text" id="passport-number" name="passport-number" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="passport-expiry">Expiry Date</label>
+                                        <input type="date" id="passport-expiry" name="passport-expiry" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-buttons">
+                                <button type="button" class="btn btn-outline prev-step">Back</button>
+                                <button type="button" class="btn btn-primary next-step">Continue to Payment</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3: Payment Information -->
+                        <div class="form-step" data-step="3">
+                            <h2>Payment Information</h2>
+                            <p class="form-subtitle">Secure payment to confirm your booking</p>
+                            
+                            <div class="form-group">
+                                <label>Payment Method</label>
+                                <div class="payment-methods">
+                                    <div class="payment-method">
+                                        <input type="radio" id="credit-card" name="payment-method" value="credit-card" checked>
+                                        <label for="credit-card">
+                                            <i class="far fa-credit-card"></i>
+                                            Credit Card
+                                        </label>
+                                    </div>
+                                    <div class="payment-method">
+                                        <input type="radio" id="paypal" name="payment-method" value="paypal">
+                                        <label for="paypal">
+                                            <i class="fab fa-paypal"></i>
+                                            PayPal
+                                        </label>
+                                    </div>
+                                    <div class="payment-method">
+                                        <input type="radio" id="bank-transfer" name="payment-method" value="bank-transfer">
+                                        <label for="bank-transfer">
+                                            <i class="fas fa-university"></i>
+                                            Bank Transfer
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="credit-card-details">
+                                <div class="form-group">
+                                    <label for="card-holder">Card Holder Name</label>
+                                    <input type="text" id="card-holder" name="card-holder" placeholder="Name as it appears on your card">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="card-number">Card Number</label>
+                                    <div class="card-input-container">
+                                        <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" maxlength="19">
+                                        <div class="card-icons">
+                                            <i class="fab fa-cc-visa"></i>
+                                            <i class="fab fa-cc-mastercard"></i>
+                                            <i class="fab fa-cc-amex"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="expiry-date">Expiry Date</label>
+                                        <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" maxlength="5">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cvv">CVV</label>
+                                        <div class="cvv-container">
+                                            <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4">
+                                            <i class="fas fa-question-circle cvv-info" title="3-digit code on the back of your card, 4 digits on the front for AMEX"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="paypal-details" style="display: none;">
+                                <div class="paypal-info">
+                                    <i class="fab fa-paypal paypal-icon"></i>
+                                    <p>You will be redirected to PayPal to complete your payment securely.</p>
+                                </div>
+                            </div>
+                            
+                            <div id="bank-details" style="display: none;">
+                                <div class="bank-info">
+                                    <i class="fas fa-university bank-icon"></i>
+                                    <p>Bank transfer details will be provided after you submit your booking.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="checkbox-item terms-checkbox">
+                                    <input type="checkbox" id="terms" name="terms" required>
+                                    <label for="terms">I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-buttons">
+                                <button type="button" class="btn btn-outline prev-step">Back</button>
+                                <button type="button" class="btn btn-primary next-step">Complete Booking</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 4: Confirmation -->
+                        <div class="form-step" data-step="4">
+                            <div class="confirmation-content">
+                                <div class="confirmation-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <h2>Booking Confirmed!</h2>
+                                <p>Thank you for booking with Wanderlust. Your trip has been successfully booked.</p>
+                                <div class="booking-details">
+                                    <div class="booking-reference">
+                                        <span>Booking Reference:</span>
+                                        <strong id="booking-reference">WL-12345678</strong>
+                                    </div>
+                                    <p>A confirmation email has been sent to <span id="confirmation-email">your email address</span>.</p>
+                                </div>
+                                <div class="confirmation-actions">
+                                    <a href="index.html" class="btn btn-outline">Return to Home</a>
+                                    <button type="button" class="btn btn-primary" id="download-confirmation">Download Confirmation</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Booking Summary -->
+                <div class="booking-summary">
+                    <div class="summary-header">
+                        <h3>Booking Summary</h3>
+                    </div>
+                    <div class="summary-content">
+                        <div class="summary-destination">
+                            <img src="/placeholder.svg?height=150&width=250" alt="Destination" id="summary-image">
+                            <h4 id="summary-destination">Select a destination</h4>
+                        </div>
+                        <div class="summary-details">
+                            <div class="summary-item">
+                                <span class="summary-label">Check-in:</span>
+                                <span class="summary-value" id="summary-checkin">--/--/----</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Check-out:</span>
+                                <span class="summary-value" id="summary-checkout">--/--/----</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Guests:</span>
+                                <span class="summary-value" id="summary-guests">2 Adults, 0 Children</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Package:</span>
+                                <span class="summary-value" id="summary-package">--</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Accommodation:</span>
+                                <span class="summary-value" id="summary-accommodation">--</span>
+                            </div>
+                        </div>
+                        <div class="summary-services" id="summary-services">
+                            <h5>Additional Services</h5>
+                            <p class="no-services">No additional services selected</p>
+                        </div>
+                        <div class="price-breakdown">
+                            <div class="price-item">
+                                <span>Package Price</span>
+                                <span id="package-price">$0.00</span>
+                            </div>
+                            <div class="price-item">
+                                <span>Additional Services</span>
+                                <span id="services-price">$0.00</span>
+                            </div>
+                            <div class="price-item">
+                                <span>Taxes & Fees</span>
+                                <span id="taxes-price">$0.00</span>
+                            </div>
+                            <div class="price-total">
+                                <span>Total</span>
+                                <span id="total-price">$0.00</span>
+                            </div>
+                        </div>
+                        <div class="promo-code">
+                            <input type="text" placeholder="Promo Code">
+                            <button class="btn btn-secondary">Apply</button>
+                        </div>
+                        <div class="summary-help">
+                            <h5>Need Help?</h5>
+                            <p>If you have any questions about your booking, please contact our customer support.</p>
+                            <a href="tel:+1234567890" class="help-phone"><i class="fas fa-phone-alt"></i> +1 (234) 567-890</a>
+                            <a href="mailto:support@wanderlust.com" class="help-email"><i class="fas fa-envelope"></i> support@wanderlust.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Wander<span>lust</span></h2>
+                    <p>Discover the world with us</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#destinations">Destinations</a></li>
+                            <li><a href="index.html#packages">Packages</a></li>
+                            <li><a href="index.html#about">About Us</a></li>
+                            <li><a href="index.html#gallery">Gallery</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Destinations</h3>
+                        <ul>
+                            <li><a href="#">Bali, Indonesia</a></li>
+                            <li><a href="#">Paris, France</a></li>
+                            <li><a href="#">Tokyo, Japan</a></li>
+                            <li><a href="#">New York, USA</a></li>
+                            <li><a href="#">Rome, Italy</a></li>
+                            <li><a href="#">View All</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Travel Types</h3>
+                        <ul>
+                            <li><a href="#">Beach Vacations</a></li>
+                            <li><a href="#">Adventure Travel</a></li>
+                            <li><a href="#">City Breaks</a></li>
+                            <li><a href="#">Cultural Tours</a></li>
+                            <li><a href="#">Luxury Retreats</a></li>
+                            <li><a href="#">Family Holidays</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Contact Info</h3>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> 123 Travel Street, Adventure City</li>
+                            <li><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</li>
+                            <li><i class="fas fa-envelope"></i> info@wanderlust.com</li>
+                            <li><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2023 Wanderlust. All Rights Reserved.</p>
+                </div>
+                <div class="payment-methods">
+                    <span>Payment Methods:</span>
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script src="booking.js"></script>
+</body>
+</html>
+
